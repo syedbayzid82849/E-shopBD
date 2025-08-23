@@ -1,0 +1,12 @@
+import dbConnect, { collectionNames } from '@/lib/dbConnect';
+import { ObjectId } from 'mongodb';
+import React from 'react'
+
+export default async function productDetailsPage({params}) {
+    const p = await params;
+    const productsCollection = dbConnect(collectionNames.productsCollection);
+    const data = productsCollection.findOn({_id: new ObjectId(p.id)})length
+    return (
+        <div className='text-black pt-14'>{JSON.stringify(productId)}</div>
+    )
+}
