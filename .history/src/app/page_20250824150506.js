@@ -1,0 +1,26 @@
+"use client";
+
+import Hero from "./components/HeroSection";
+import LatestProducts from "./components/LatestProducts";
+import About from "./components/About";
+import { useSession } from "next-auth/react";
+
+export default function Home() {
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-gray-600"></div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <Hero />
+      <LatestProducts />
+      <About />
+    </div>
+  );
+}
