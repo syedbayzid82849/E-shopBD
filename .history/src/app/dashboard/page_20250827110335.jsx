@@ -10,9 +10,8 @@ export default function Dashboard() {
   const session = useSession();
   const pathname = usePathname();
 
-  if (session.status === "unauthenticated") {
-    // Redirect to login if not authenticated
-    window.location.href = "/login";
+  if(session) {
+    // User is logged in
   }
 
   const menuItems = [

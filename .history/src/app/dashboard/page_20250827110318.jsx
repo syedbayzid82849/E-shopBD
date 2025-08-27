@@ -10,11 +10,6 @@ export default function Dashboard() {
   const session = useSession();
   const pathname = usePathname();
 
-  if (session.status === "unauthenticated") {
-    // Redirect to login if not authenticated
-    window.location.href = "/login";
-  }
-
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "Add Product", href: "/dashboard/add-products" }, // handled by modal

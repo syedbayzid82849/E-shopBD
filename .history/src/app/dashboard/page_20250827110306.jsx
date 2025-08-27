@@ -2,18 +2,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
-  const session = useSession();
+  const 
   const pathname = usePathname();
-
-  if (session.status === "unauthenticated") {
-    // Redirect to login if not authenticated
-    window.location.href = "/login";
-  }
 
   const menuItems = [
     { name: "Home", href: "/" },

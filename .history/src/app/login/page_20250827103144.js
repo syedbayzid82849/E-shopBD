@@ -45,7 +45,7 @@ export default function Login() {
         <div className="bg-gray-100 min-h-screen py-14 flex items-center justify-center px-4 font-sans text-black">
             <div className="w-full max-w-md p-6 rounded-md shadow bg-gray-50">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
-                <p>{"Don't have an account? "}<a href="/register" className="text-blue-600">Sign up</a></p>
+                <p>{''}<a href="/register" className="text-blue-600">Sign up</a></p>
                 {/* Social Login Buttons */}
                 <div className="flex flex-col space-y-3 mb-6">
 
