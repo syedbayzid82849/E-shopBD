@@ -1,18 +1,14 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import Layout from "./layouts/page";
-import Navbar from "./components/Navbar";
+import { useSession } from "next-auth/react";
 import Hero from "./components/HeroSection";
-import Categories from "./categories/page";
 import LatestProducts from "./components/LatestProducts";
 import About from "./components/About";
-import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const session = useSession();
-  console.log(session?.status);
-  if (session?.status === "loading") {
+  const { data: session, status } = useSession();
+  console.log("Session status:", status);
+
+  if (status === "loading") {
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="text-center">
@@ -20,8 +16,9 @@ export default function Home() {
           <p className="mt-2 text-gray-600">Loading...</p>
         </div>
       </div>
-    )
+    );
   }
+
   return (
     <>
       <Hero />

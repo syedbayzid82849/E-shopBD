@@ -30,6 +30,14 @@ export default function Register() {
 
             if (res?.acknowledged) {
                 toast.success("Registration successful ✅", { id: toastId });
+
+                // auto login after register 
+                await signIn("credentials", {
+                    email: form.email,
+                    password: form.password,
+                    redirect: true,
+                    callbackUrl: "/", 
+                });
             } else {
                 toast.error("User already exists ❌", { id: toastId });
             }

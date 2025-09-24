@@ -14,14 +14,14 @@ export default function Login() {
     // ✅ Login Submit
     const onSubmit = async (data) => {
         const { email, password } = data;
-        
+
         const toastId = toast.loading("Processing...");
 
         try {
             const res = await signIn("credentials", {
                 email,
                 password,
-                redirect: false, 
+                redirect: false,
             });
 
             console.log("SignIn Response:", res);
@@ -110,6 +110,11 @@ export default function Login() {
                         Login
                     </button>
                 </form>
+                <p className="mt-2 text-center">
+                    <a href="/forgot-password" className="text-blue-600 hover:underline">
+                        Forgot your password?
+                    </a>
+                </p>
             </div>
         </div>
     );
